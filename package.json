@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node alert.js",
+    "review":"The linter is installed locally in the node_modules directory",
     "review": "node ./scripts/format.js && eslint --ignore-path .gitignore ."
   },
   "author": "",

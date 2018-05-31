@@ -1,6 +1,8 @@
-const jsBeautify = require('js-beautify')['js_beautify'];
-const fs = require('fs');
-const glob = require('glob');
+/* This is the file containing the script that executes the js-beautifier */
+
+const jsBeautify = require('js-beautify')['js_beautify']
+const fs = require('fs')
+const glob = require('glob')
 
 const options = {
   indent_size: 2,
@@ -23,27 +25,26 @@ const options = {
   e4x: false,
   comma_first: false,
   operator_position: 'before-newline'
-};
+}
 
 glob('!(node_modules)*.js', { // first directory
   absolute: true
 }, (er, files) => {
   files.forEach(file => {
-    console.log(`js-beautify ${file}`);
-    const data = fs.readFileSync(file, 'utf8');
-    const nextData = jsBeautify(data, options);
-    fs.writeFileSync(file, nextData, 'utf8');
-  });
-});
-
+    console.log(`js-beautify ${file}`)
+    const data = fs.readFileSync(file, 'utf8')
+    const nextData = jsBeautify(data, options)
+    fs.writeFileSync(file, nextData, 'utf8')
+  })
+})
 
 glob('!(node_modules)/**/*.js', { // all subdirectories from there on EXCEPT node_modules
   absolute: true
 }, (er, files) => {
   files.forEach(file => {
-    console.log(`js-beautify ${file}`);
-    const data = fs.readFileSync(file, 'utf8');
-    const nextData = jsBeautify(data, options);
-    fs.writeFileSync(file, nextData, 'utf8');
-  });
-});
+    console.log(`js-beautify ${file}`)
+    const data = fs.readFileSync(file, 'utf8')
+    const nextData = jsBeautify(data, options)
+    fs.writeFileSync(file, nextData, 'utf8')
+  })
+})
