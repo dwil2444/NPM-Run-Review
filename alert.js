@@ -1,17 +1,17 @@
 'use strict'
 
 let student = {
-  name: 'John',
-  age: 30,
-  isAdmin: false,
-  courses: ['html', 'css', 'js'],
-  wife: null
+    name: 'John',
+    age: 30,
+    isAdmin: false,
+    courses: ['html', 'css', 'js'],
+    wife: null
 }
 
 let json = JSON.stringify(student)
 
 function logSomething() {
-  console.log('Something')
+    console.log('Something')
 }
 logSomething()
 console.log(json)
